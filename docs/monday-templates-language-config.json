@@ -1,0 +1,249 @@
+{
+  "monday_templates_language_config": {
+    "required_columns": [
+      {
+        "name": "País",
+        "type": "text",
+        "id": "text_mkyn95hk",
+        "description": "Almacena el país del contacto extraído del formulario"
+      },
+      {
+        "name": "Idioma",
+        "type": "status",
+        "id": "language_mkyn_code",
+        "options": ["ES", "PT", "EN"],
+        "description": "Idioma detectado basado en el país"
+      },
+      {
+        "name": "Plantilla de Mensaje",
+        "type": "text",
+        "id": "template_message_text",
+        "description": "Contiene el mensaje personalizado según el idioma"
+      }
+    ],
+    "language_templates": {
+      "ES": {
+        "template_name": "Plantilla ES - Hablantes de Español",
+        "default_values": {
+          "language_mkyn_code": "ES",
+          "color_mkyn199t": "WARM",
+          "group_id": "spanish_speakers"
+        },
+        "message_template": "Hola [Nombre],\n\nGracias por su interés en [Institución]. Nos complace atenderle en español y nos pondremos en contacto próximamente para continuar con su solicitud."
+      },
+      "PT": {
+        "template_name": "Plantilla PT - Hablantes de Portugués", 
+        "default_values": {
+          "language_mkyn_code": "PT",
+          "color_mkyn199t": "WARM", 
+          "group_id": "portuguese_speakers"
+        },
+        "message_template": "Olá [Nome],\n\nAgradecemos seu interesse em [Instituição]. É um prazer atendê-lo em português e entraremos em contato em breve para continuar com seu pedido."
+      },
+      "EN": {
+        "template_name": "Plantilla EN - Hablantes de Inglés",
+        "default_values": {
+          "language_mkyn_code": "EN", 
+          "color_mkyn199t": "WARM",
+          "group_id": "english_speakers"
+        },
+        "message_template": "Hello [Name],\n\nThank you for your interest in [Institution]. We're pleased to assist you in English and will contact you soon to continue with your request."
+      }
+    },
+    "automations": [
+      {
+        "name": "Detectar idioma por país",
+        "trigger": {
+          "type": "column_change",
+          "column_id": "text_mkyn95hk"
+        },
+        "action": {
+          "type": "update_column",
+          "target_column": "language_mkyn_code",
+          "conditions": [
+            {
+              "condition": "column_value_contains",
+              "values": ["México", "Colombia", "Argentina", "España", "México", "CO", "MX", "AR", "ES"],
+              "result": "ES"
+            },
+            {
+              "condition": "column_value_contains", 
+              "values": ["Brasil", "Portugal", "Brasil", "Portugal", "BR", "PT"],
+              "result": "PT"
+            },
+            {
+              "condition": "column_value_contains",
+              "values": ["United States", "United Kingdom", "Canada", "Australia", "US", "USA", "UK", "GB", "CA", "AU"],
+              "result": "EN"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Personalizar mensaje por idioma",
+        "trigger": {
+          "type": "column_change",
+          "column_id": "language_mkyn_code"
+        },
+        "action": {
+          "type": "update_column",
+          "target_column": "template_message_text",
+          "conditions": [
+            {
+              "condition": "column_value_equals",
+              "value": "ES",
+              "result": "Hola [Nombre],\n\nGracias por su interés en [Institución]. Nos complace atenderle en español..."
+            },
+            {
+              "condition": "column_value_equals",
+              "value": "PT", 
+              "result": "Olá [Nome],\n\nAgradecemos seu interesse em [Instituição]. É um prazer atendê-lo em português..."
+            },
+            {
+              "condition": "column_value_equals",
+              "value": "EN",
+              "result": "Hello [Name],\n\nThank you for your interest in [Institution]. We're pleased to assist you in English..."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Ajustar scoring por idioma",
+        "trigger": {
+          "type": "column_change", 
+          "column_id": "language_mkyn_code"
+        },
+        "action": {
+          "type": "calculate_score",
+          "conditions": [
+            {
+              "condition": "column_value_and_country_check",
+              "language": "ES",
+              "countries": ["México", "CO"],
+              "additional_points": 2,
+              "target_column": "numeric_mkyn2py0"
+            },
+            {
+              "condition": "column_value_and_country_check",
+              "language": "PT", 
+              "countries": ["Brasil", "BR"],
+              "additional_points": 3,
+              "target_column": "numeric_mkyn2py0"
+            },
+            {
+              "condition": "column_value_and_country_check",
+              "language": "EN",
+              "countries": ["US", "CA", "UK"],
+              "additional_points": 2,
+              "target_column": "numeric_mkyn2py0"
+            }
+          ]
+        }
+      }
+    ],
+    "groups_by_language": [
+      {
+        "name": "Hablantes de Español",
+        "filter": {
+          "column": "language_mkyn_code",
+          "value": "ES"
+        },
+        "color": "green"
+      },
+      {
+        "name": "Hablantes de Portugués", 
+        "filter": {
+          "column": "language_mkyn_code",
+          "value": "PT"
+        },
+        "color": "blue"
+      },
+      {
+        "name": "Hablantes de Inglés",
+        "filter": {
+          "column": "language_mkyn_code", 
+          "value": "EN"
+        },
+        "color": "red"
+      }
+    ],
+    "workflows": {
+      "spanish_team_workflow": {
+        "name": "Flujo para Equipo Español",
+        "filters": {
+          "language": "ES"
+        },
+        "actions": [
+          "assign_to_spanish_representative",
+          "add_to_followup_list_es"
+        ]
+      },
+      "portuguese_team_workflow": {
+        "name": "Flujo para Equipo Portugués",
+        "filters": {
+          "language": "PT" 
+        },
+        "actions": [
+          "assign_to_portuguese_representative",
+          "add_to_followup_list_pt"
+        ]
+      },
+      "international_team_workflow": {
+        "name": "Flujo para Equipo Internacional",
+        "filters": {
+          "language": "EN"
+        },
+        "actions": [
+          "assign_to_international_representative", 
+          "add_to_followup_list_en"
+        ]
+      }
+    },
+    "reporting_metrics": [
+      {
+        "name": "Tasa de Conversión por Idioma",
+        "columns": ["language_mkyn_code", "status_conversion"],
+        "calculation": "conversion_rate_grouped_by_language"
+      },
+      {
+        "name": "Tiempo de Respuesta por Idioma",
+        "columns": ["language_mkyn_code", "response_time_hours"],
+        "calculation": "average_response_time_by_language_group"
+      },
+      {
+        "name": "Lead Score Promedio por Idioma",
+        "columns": ["language_mkyn_code", "numeric_mkyn2py0"],
+        "calculation": "average_score_by_language_group"
+      }
+    ],
+    "implementation_phases": [
+      {
+        "phase": 1,
+        "name": "Configuración Básica",
+        "tasks": [
+          "Crear columnas requeridas",
+          "Establecer automatizaciones básicas de detección de idioma",
+          "Probar con un subconjunto de datos"
+        ]
+      },
+      {
+        "phase": 2,
+        "name": "Automatizaciones Avanzadas", 
+        "tasks": [
+          "Implementar reglas de scoring por idioma",
+          "Añadir asignación automática de equipos",
+          "Configurar grupos por idioma"
+        ]
+      },
+      {
+        "phase": 3,
+        "name": "Monitoreo y Ajustes",
+        "tasks": [
+          "Implementar reportes por idioma",
+          "Recopilar feedback y hacer ajustes",
+          "Expandir a otros tableros si aplica"
+        ]
+      }
+    ]
+  }
+}

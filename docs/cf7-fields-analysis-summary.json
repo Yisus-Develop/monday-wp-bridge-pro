@@ -1,0 +1,146 @@
+{
+  "cf7_forms_analysis_summary": {
+    "total_forms": 12,
+    "total_unique_fields": 35,
+    "recommended_standardized_fields": 8,
+    "profile_types_found": [
+      "institucion",
+      "pais",
+      "pioneer",
+      "ciudad",
+      "empresa",
+      "mentor",
+      "zer",
+      "undefined"
+    ],
+    "most_common_fields": [
+      "email",
+      "nombre",
+      "pais_cf7",
+      "ciudad_cf7",
+      "perfil",
+      "next_step",
+      "telefono",
+      "pais_otro"
+    ],
+    "forms_by_complexity": [
+      {
+        "id": 6468,
+        "title": "Beneficios instituciones",
+        "field_count": 12,
+        "profile_type": "institucion"
+      },
+      {
+        "id": 3072,
+        "title": "Registro Ciudad / Gobierno local",
+        "field_count": 11,
+        "profile_type": "ciudad"
+      },
+      {
+        "id": 3071,
+        "title": "Empresa",
+        "field_count": 11,
+        "profile_type": "empresa"
+      },
+      {
+        "id": 3070,
+        "title": "Registro Institución Educativa",
+        "field_count": 11,
+        "profile_type": "institucion"
+      },
+      {
+        "id": 5410,
+        "title": "Suscribirme a alertas",
+        "field_count": 13,
+        "profile_type": "undefined"
+      }
+    ],
+    "inconsistencies_found": [
+      "Duplicated forms: 'form pie de pagina' and 'contacto general'",
+      "Inconsistent naming: 'nombre', 'ea_firstname', 'ea_lastname', 'contact_name', 'org_name'",
+      "Missing profile_type in some forms",
+      "Multiple hidden fields with different purposes"
+    ],
+    "priority_actions": [
+      "Consolidate duplicated forms",
+      "Standardize name fields to first_name and last_name",
+      "Assign profile_type to all forms",
+      "Create mapping with Monday.com columns",
+      "Ensure all forms capture sufficient data for lead scoring"
+    ],
+    "forms_analysis": [
+      {
+        "id": 6811,
+        "title": "form pie de pagina",
+        "fields": ["next_step", "pais_cf7", "ciudad_cf7", "perfil", "nombre", "email", "institucion", "asunto", "mensaje"],
+        "profile_type": "undefined"
+      },
+      {
+        "id": 6807,
+        "title": "contacto general",
+        "fields": ["next_step", "pais_cf7", "ciudad_cf7", "perfil", "nombre", "email", "institucion", "asunto", "mensaje"],
+        "profile_type": "undefined"
+      },
+      {
+        "id": 6468,
+        "title": "Beneficios instituciones",
+        "fields": ["perfil", "next_step", "pais_cf7", "ciudad_cf7", "org_name", "contact_name", "email", "telefono", "tipo_institucion", "numero_estudiantes", "pais_otro", "timestamp-field"],
+        "profile_type": "institucion"
+      },
+      {
+        "id": 5410,
+        "title": "Suscribirme a alertas",
+        "fields": ["ea_firstname", "ea_lastname", "ea_role", "ea_institution", "ea_email", "ea_city", "ea_country", "ea_lang", "ea_source", "ea_referrer", "ea_tags", "ea_timestamp", "ea_nonce"],
+        "profile_type": "undefined"
+      },
+      {
+        "id": 3074,
+        "title": "Registro País",
+        "fields": ["perfil", "next_step", "pais_cf7", "ciudad_cf7", "nombre", "email", "pais_otro", "mensaje"],
+        "profile_type": "pais"
+      },
+      {
+        "id": 3073,
+        "title": "Mission Partner / Pioneer",
+        "fields": ["perfil", "next_step", "pais_cf7", "ciudad_cf7", "nombre", "email", "interes", "telefono", "pais_otro"],
+        "profile_type": "pioneer"
+      },
+      {
+        "id": 3072,
+        "title": "Registro Ciudad / Gobierno local",
+        "fields": ["perfil", "next_step", "pais_cf7", "ciudad_cf7", "entity", "nombre", "email", "telefono", "poblacion", "aliados_potenciales", "pais_otro"],
+        "profile_type": "ciudad"
+      },
+      {
+        "id": 3071,
+        "title": "Empresa",
+        "fields": ["perfil", "next_step", "pais_cf7", "ciudad_cf7", "company", "nombre", "email", "modality", "sector", "telefono", "pais_otro"],
+        "profile_type": "empresa"
+      },
+      {
+        "id": 3070,
+        "title": "Registro Institución Educativa",
+        "fields": ["perfil", "next_step", "pais_cf7", "ciudad_cf7", "org_name", "contact_name", "email", "telefono", "tipo_institucion", "numero_estudiantes", "pais_otro"],
+        "profile_type": "institucion"
+      },
+      {
+        "id": 3069,
+        "title": "Registro Maestros o mentores",
+        "fields": ["perfil", "next_step", "pais_cf7", "ciudad_cf7", "nombre", "email", "institucion", "especialidad", "pais_otro"],
+        "profile_type": "mentor"
+      },
+      {
+        "id": 2759,
+        "title": "Registro Zer",
+        "fields": ["perfil", "next_step", "monto", "pais_cf7", "ciudad_cf7", "nombre", "fecha_nacimiento", "institucion", "email", "pais_otro"],
+        "profile_type": "zer"
+      },
+      {
+        "id": 2758,
+        "title": "Formulario de contacto 1",
+        "fields": ["nombre", "email"],
+        "profile_type": "undefined"
+      }
+    ]
+  }
+}

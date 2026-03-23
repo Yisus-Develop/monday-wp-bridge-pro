@@ -1,0 +1,90 @@
+{
+  "language_filter_config": {
+    "countries_map": {
+      "ES": [
+        "España", "México", "Colombia", "Argentina", "Chile", "Perú", 
+        "Venezuela", "Ecuador", "Guatemala", "Cuba", "Bolivia", 
+        "República Dominicana", "Honduras", "El Salvador", "Nicaragua", 
+        "Paraguay", "Costa Rica", "Uruguay", "Puerto Rico", "Panamá",
+        "ES", "CO", "MX", "AR", "CL", "PE", "VE", "EC", "GT", "CU", 
+        "BO", "DO", "HN", "SV", "NI", "PY", "CR", "UY", "PR", "PA"
+      ],
+      "PT": [
+        "Portugal", "Brasil", "Angola", "Mozambique", 
+        "PT", "BR", "AO", "MZ"
+      ],
+      "EN": [
+        "United States", "United Kingdom", "Canada", "Australia", 
+        "Ireland", "New Zealand",
+        "US", "USA", "UK", "GB", "CA", "AU", "IE", "NZ"
+      ]
+    },
+    "templates_by_language": {
+      "ES": {
+        "subject": "[Institucion] — Activación Mars Challenge 2026 como Institución Líder",
+        "message": "Estimada/o [Nombre],\n\nGracias por registrar a [Institucion] en Mars Challenge 2026 – Tierra. Es un gusto contar con su interés en formar parte del movimiento educativo que reúne a jóvenes y docentes de más de 20 países.\n\nPara activar oficialmente la participación de la institución, solo necesitamos que elijan una de estas dos modalidades...\n\n[Contenido personalizado para hablantes de español]",
+        "additional_score": 0
+      },
+      "PT": {
+        "subject": "[Institucion] — Ativação Mars Challenge 2026 como Instituição Líder",
+        "message": "Prezado(a) [Nombre],\n\nObrigado por registar a [Institucion] no Mars Challenge 2026 – Terra. É um prazer contar com o vosso interesse em fazer parte do movimento educativo que reúne jovens e docentes de mais de 20 países...\n\n[Contenido personalizado para hablantes de portugués]",
+        "additional_score": 0
+      },
+      "EN": {
+        "subject": "[Institucion] — Mars Challenge 2026 Activation as Leading Institution",
+        "message": "Dear [Nombre],\n\nThank you for registering [Institucion] in Mars Challenge 2026 – Earth. It is a pleasure to count on your interest in being part of the educational movement that brings together youth and teachers from over 20 countries...\n\n[Contenido personalizado para hablantes de inglés]",
+        "additional_score": 0
+      }
+    },
+    "language_scoring_rules": {
+      "ES_priority_countries": {
+        "MX": 2,
+        "CO": 2,
+        "AR": 2,
+        "ES": 1
+      },
+      "PT_priority_countries": {
+        "BR": 3
+      },
+      "EN_key_markets": {
+        "US": 2,
+        "CA": 2,
+        "UK": 1
+      }
+    },
+    "monday_integration": {
+      "language_column_id": "language_mkyn_code",
+      "language_column_name": "Idioma",
+      "language_automation_rules": [
+        {
+          "condition": "language = 'ES'",
+          "action": "assign_to_spanish_team",
+          "description": "Asignar a equipo de habla hispana"
+        },
+        {
+          "condition": "language = 'PT'",
+          "action": "assign_to_portuguese_team",
+          "description": "Asignar a equipo de habla portuguesa"
+        },
+        {
+          "condition": "language = 'EN'",
+          "action": "assign_to_international_team",
+          "description": "Asignar a equipo internacional"
+        }
+      ]
+    },
+    "implementation_steps": [
+      "1. Detectar idioma basado en campo país del formulario",
+      "2. Seleccionar template de mensaje según idioma detectado", 
+      "3. Aplicar scoring adicional según país e idioma",
+      "4. Etiquetar lead con código de idioma en Monday",
+      "5. Aplicar automatizaciones según idioma del lead"
+    ],
+    "validation_criteria": [
+      "Los mensajes se envían en el idioma correcto según país",
+      "El scoring se ajusta según región geográfica",
+      "Los leads se clasifican por idioma en Monday",
+      "Las automatizaciones se ejecutan según idioma del contacto"
+    ]
+  }
+}

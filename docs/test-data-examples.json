@@ -1,0 +1,98 @@
+{
+  "test_data_examples": [
+    {
+      "test_name": "Mission Partner VIP",
+      "form_data": {
+        "perfil": "pioneer",
+        "nombre": "Adelino de Almeida",
+        "email": "adelino@missionpartner.com",
+        "pais_cf7": "Portugal",
+        "telefono": "+351 912 345 678",
+        "interes": "Participar en Mars Challenge 2026"
+      },
+      "expected_score": 10,
+      "expected_classification": "WARM"
+    },
+    {
+      "test_name": "Universidad Grande",
+      "form_data": {
+        "perfil": "institucion",
+        "nombre": "Dr. María González",
+        "email": "rector@universidadmx.edu",
+        "pais_otro": "México",
+        "org_name": "Universidad Nacional de México",
+        "tipo_institucion": "Universidad",
+        "numero_estudiantes": 25000
+      },
+      "expected_score": 18,
+      "expected_classification": "HOT"
+    },
+    {
+      "test_name": "Ciudad Grande",
+      "form_data": {
+        "perfil": "ciudad",
+        "nombre": "Alcalde Carlos Ramírez",
+        "email": "alcalde@bogota.gov",
+        "pais_cf7": "Colombia",
+        "entity": "Alcaldía de Bogotá",
+        "poblacion": 8000000
+      },
+      "expected_score": 20,
+      "expected_classification": "HOT"
+    },
+    {
+      "test_name": "Empresa con Donación",
+      "form_data": {
+        "perfil": "empresa",
+        "nombre": "Laura Martínez",
+        "email": "laura@innovatecorp.com",
+        "pais_otro": "España",
+        "company": "Innovate Corporation",
+        "modality": "Donación"
+      },
+      "expected_score": 8,
+      "expected_classification": "COLD"
+    },
+    {
+      "test_name": "Contacto General",
+      "form_data": {
+        "nombre": "Juan Pérez",
+        "email": "juan.perez@email.com",
+        "pais_cf7": "Argentina",
+        "mensaje": "Interesado en más información"
+      },
+      "expected_score": 0,
+      "expected_classification": "COLD"
+    },
+    {
+      "test_name": "Newsletter Subscription",
+      "form_data": {
+        "ea_firstname": "Carlos",
+        "ea_lastname": "Silva",
+        "ea_email": "carlos.silva@interesado.com",
+        "ea_country": "Brasil",
+        "ea_source": "popup",
+        "ea_tags": "events,alerts"
+      },
+      "expected_score": 0,
+      "expected_classification": "COLD"
+    }
+  ],
+  "column_mapping": {
+    "original_ids": {
+      "numeric_mkyn2py0": "Lead Score",
+      "color_mkypv3rg": "Clasificación (HOT/WARM/COLD)", 
+      "color_mkyng649": "Rol Detectado",
+      "text_mkyn95hk": "País"
+    },
+    "new_ids": {
+      "dropdown_mkyp8q98": "Tipo de Lead",
+      "dropdown_mkypf16c": "Canal de Origen",
+      "text_mkypn0m": "Mission Partner",
+      "dropdown_mkyps472": "Idioma",
+      "date_mkyp6w4t": "Fecha de Entrada",
+      "date_mkypeap2": "Próxima Acción",
+      "long_text_mkypqppc": "Notas Internas"
+    }
+  }
+}

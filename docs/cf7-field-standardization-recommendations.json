@@ -1,0 +1,86 @@
+{
+  "standardization_recommendations": {
+    "common_fields": [
+      {
+        "recommended_name": "first_name",
+        "current_names": ["nombre"],
+        "description": "Nombre del contacto",
+        "type": "text",
+        "required": true
+      },
+      {
+        "recommended_name": "last_name",
+        "current_names": [],
+        "description": "Apellido del contacto",
+        "type": "text",
+        "required": true
+      },
+      {
+        "recommended_name": "email",
+        "current_names": ["email", "ea_email"],
+        "description": "Correo electrónico del contacto",
+        "type": "email",
+        "required": true
+      },
+      {
+        "recommended_name": "phone",
+        "current_names": ["telefono", "celular"],
+        "description": "Número de teléfono del contacto",
+        "type": "tel",
+        "required": false
+      },
+      {
+        "recommended_name": "profile_type",
+        "current_names": ["perfil"],
+        "description": "Tipo de perfil del contacto",
+        "type": "select",
+        "required": true,
+        "options": ["company", "mission_partner", "local_government", "educational_institution", "mentor", "youth", "country"]
+      },
+      {
+        "recommended_name": "country",
+        "current_names": ["pais_cf7", "pais_otro"],
+        "description": "País del contacto",
+        "type": "text",
+        "required": false
+      },
+      {
+        "recommended_name": "city",
+        "current_names": ["ciudad_cf7", "ciudad", "ea_city"],
+        "description": "Ciudad del contacto",
+        "type": "text",
+        "required": false
+      },
+      {
+        "recommended_name": "lead_source",
+        "current_names": ["ea_source"],
+        "description": "Fuente del lead",
+        "type": "hidden",
+        "required": false
+      }
+    ],
+    "profile_type_mapping": {
+      "empresa": "company",
+      "pioneer": "mission_partner",
+      "ciudad": "local_government",
+      "institucion": "educational_institution",
+      "mentor": "mentor",
+      "zer": "youth",
+      "pais": "country"
+    },
+    "implementation_steps": [
+      "Create a base form with standardized field names",
+      "Gradually apply changes to existing 12 forms",
+      "Update processing functions to handle new field names",
+      "Ensure compatibility with Monday.com integration",
+      "Validate lead scoring functionality with new structure"
+    ],
+    "benefits": [
+      "Easier lead scoring with consistent fields",
+      "Better Monday.com integration",
+      "Improved data analysis capabilities",
+      "Reduced implementation errors",
+      "Simplified maintenance"
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "cf7_monday_integration_rules": {
+    "mapping_rules": {
+      "name_field": {
+        "priority_order": ["nombre", "contact_name", "ea_firstname + ea_lastname", "ea_firstname"],
+        "destination": "name",
+        "description": "Mapeo dinámico del nombre del contacto"
+      },
+      "email_field": {
+        "priority_order": ["email", "ea_email"],
+        "destination": "lead_email",
+        "description": "Mapeo del email del contacto"
+      },
+      "phone_field": {
+        "priority_order": ["telefono", "celular"],
+        "destination": "lead_phone",
+        "description": "Mapeo del teléfono del contacto"
+      },
+      "company_field": {
+        "priority_order": ["org_name", "company", "entity", "institucion"],
+        "destination": "lead_company",
+        "description": "Mapeo del nombre de la organización"
+      },
+      "role_field": {
+        "priority_order": ["tipo_institucion", "sector", "interes", "especialidad", "ea_role"],
+        "destination": "text",
+        "description": "Mapeo del puesto o rol del contacto"
+      },
+      "country_field": {
+        "priority_order": ["pais_cf7", "pais_otro", "ea_country"],
+        "destination": "text_mkyn95hk",
+        "description": "Mapeo del país del contacto"
+      }
+    },
+    "scoring_rules": {
+      "profile_based": {
+        "pioneer": {"points": 10, "role": "Mission Partner", "classification": "HOT"},
+        "institucion": {"points": 10, "role": "Rector/Director", "classification": "HOT"},
+        "ciudad": {"points": 10, "role": "Alcalde/Gobierno", "classification": "HOT"},
+        "empresa": {"points": 5, "role": "Corporate", "classification": "WARM"},
+        "mentor": {"points": 3, "role": "Maestro", "classification": "COLD"},
+        "pais": {"points": 5, "role": "Interesado País", "classification": "WARM"},
+        "zer": {"points": 3, "role": "Joven", "classification": "COLD"},
+        "general": {"points": 0, "role": "General", "classification": "COLD"}
+      },
+      "characteristic_based": {
+        "university": {"points": 5, "condition": "tipo_institucion = Universidad"},
+        "large_students": {"points": 3, "condition": "numero_estudiantes > 1000"},
+        "large_population": {"points": 3, "condition": "poblacion > 100000"},
+        "priority_country": {"points": 5, "condition": "country in priority list"}
+      }
+    },
+    "filtering_rules": {
+      "exclusion_filters": [
+        {
+          "name": "no_profile_filter",
+          "description": "Excluir formularios sin perfil definido",
+          "condition": "perfil is empty or not exists",
+          "affected_forms": ["Contacto general", "Form pie de página"]
+        },
+        {
+          "name": "newsletter_filter",
+          "description": "Excluir formularios de newsletter",
+          "condition": "ea_source = 'popup' or ea_tags contains 'newsletter'",
+          "affected_forms": ["Suscribirme a alertas"]
+        },
+        {
+          "name": "low_info_filter",
+          "description": "Excluir formularios con poca información",
+          "condition": "number of fields < 3",
+          "affected_forms": ["Formulario de contacto 1"]
+        }
+      ],
+      "quality_filters": [
+        {
+          "name": "required_fields_filter",
+          "description": "Verificar campos obligatorios",
+          "condition": "name and email exist and are not empty",
+          "action": "reject if not met"
+        },
+        {
+          "name": "email_validation_filter",
+          "description": "Validar formato de email",
+          "condition": "email has valid format",
+          "action": "reject if not met"
+        }
+      ]
+    },
+    "classification_rules": {
+      "score_ranges": {
+        "hot": {"min": 21, "max": 30, "color": "red"},
+        "warm": {"min": 10, "max": 20, "color": "yellow"},
+        "cold": {"min": 0, "max": 9, "color": "blue"}
+      },
+      "monday_columns": {
+        "score_column_id": "numeric_mkyn2py0",
+        "classification_column_id": "color_mkyn199t",
+        "role_detected_column_id": "color_mkyng649",
+        "country_column_id": "text_mkyn95hk"
+      }
+    },
+    "processing_order": [
+      "apply_filters",
+      "map_fields_dynamically", 
+      "calculate_score",
+      "assign_classification",
+      "create_monday_item"
+    ],
+    "error_handling": {
+      "invalid_format": "log_error_and_continue",
+      "missing_fields": "apply_defaults_or_reject",
+      "connection_failure": "retry_mechanism_with_queue",
+      "malformed_data": "clean_and_validate_before_processing"
+    },
+    "monitoring_indicators": [
+      "forms_processed_count",
+      "leads_created_count", 
+      "average_score",
+      "hot_leads_percentage",
+      "filter_exclusion_count",
+      "error_rate"
+    ]
+  }
+}

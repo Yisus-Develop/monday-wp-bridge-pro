@@ -1,0 +1,33 @@
+# Ignore WordPress core files
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# Ignore logs
+*.log
+webhook_debug.log*
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore temporary files
+*.tmp
+*.swp
+*~
+
+# Ignore node modules (if any)
+node_modules/
+
+# Keep the structure
+!.gitkeep
