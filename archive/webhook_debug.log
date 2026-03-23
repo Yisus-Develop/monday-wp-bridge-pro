@@ -1,0 +1,166 @@
+2026-01-05 13:09:09 - Recibida petición. Datos: Array
+(
+    [nombre] => Test User Antigravity
+    [contact_name] => Test User Antigravity
+    [email] => yisus.dev.test@gmail.com
+    [your-name] => Test User Antigravity
+    [your-email] => yisus.dev.test@gmail.com
+    [pais_cf7] => Colombia
+    [tipo_institucion] => Universidad
+    [perfil] => institucion
+    [telefono] => +573001234567
+)
+
+2026-01-05 13:09:11 - Actualizando duplicado: 10906105957
+2026-01-05 13:09:11 - ERROR CRÍTICO: Error Monday API: [{"message":"Cannot query field \"update_item\" on type \"Mutation\". Did you mean \"create_item\", \"update_form\", \"update_view\", \"delete_item\", or \"duplicate_item\"?","locations":[{"line":2,"column":13}]}]
+2026-01-05 13:53:34 [INFO]  Recibida petición. Datos: Array
+(
+    [perfil] => zer
+    [next_step] => confirmacion
+    [monto] => 29
+    [pais_cf7] => CO
+    [ciudad_cf7] => medellin
+    [nombre] => Lead de Prueba Real
+    [fecha_nacimiento] => 1997-09-18
+    [institucion] => virtual
+    [email] => jrodriguez@virtualeduca.org
+    [pais_ui] => CO
+    [pais_otro] => 
+    [ciudad_ui] => medellin
+)
+
+2026-01-05 13:53:35 [INFO]  Creando nuevo item: Lead de Prueba Real
+2026-01-05 13:53:38 [ERROR]  Error en dropdowns: Error Monday API: [{"message":"The dropdown column parameters are an array of ids or labels","locations":[{"line":1,"column":76}],"path":["change_column_value"],"extensions":{"code":"ColumnValueException","status_code":200,"error_data":{"column_value":"{\"label\"=>\"Competici\u00f3n\"}"},"service":"monolith"}}]
+2026-01-05 13:53:38 [INFO]  Respuesta: {"status":"success","action":"created","monday_id":"10906492682"}
+2026-01-05 13:54:28 [INFO]  Recibida petición. Datos: Array
+(
+    [perfil] => zer
+    [next_step] => confirmacion
+    [monto] => 29
+    [pais_cf7] => CO
+    [ciudad_cf7] => medellin
+    [nombre] => Lead de Prueba Real
+    [fecha_nacimiento] => 1997-09-18
+    [institucion] => virtual
+    [email] => jrodriguez@virtualeduca.org
+    [pais_ui] => CO
+    [pais_otro] => 
+    [ciudad_ui] => medellin
+)
+
+2026-01-05 13:54:29 [INFO]  Actualizando duplicado: 10906492682
+2026-01-05 13:54:30 [ERROR]  ERROR CRÍTICO: Error Monday API: [{"message":"Cannot query field \"update_item\" on type \"Mutation\". Did you mean \"create_item\", \"update_form\", \"update_view\", \"delete_item\", or \"duplicate_item\"?","locations":[{"line":2,"column":13}]}]
+Stack: #0 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\MondayAPI.php(184): MondayAPI->query('mutation ($boar...', Array)
+#1 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\webhook-handler.php(111): MondayAPI->updateItem('18392144862', '10906492682', Array)
+#2 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\test_reproduce_500.php(50): include('C:\\Users\\jesus\\...')
+#3 {main}
+2026-01-05 13:58:04 [INFO]  Recibida petición. Datos: Array
+(
+    [perfil] => zer
+    [next_step] => confirmacion
+    [monto] => 29
+    [pais_cf7] => CO
+    [ciudad_cf7] => medellin
+    [nombre] => Lead de Prueba Real
+    [fecha_nacimiento] => 1997-09-18
+    [institucion] => virtual
+    [email] => jrodriguez@virtualeduca.org
+    [pais_ui] => CO
+    [pais_otro] => 
+    [ciudad_ui] => medellin
+)
+
+2026-01-05 13:58:05 [INFO]  Actualizando duplicado: 10906492682
+2026-01-05 13:58:05 [ERROR]  ERROR CRÍTICO: Error Monday API: [{"message":"Cannot query field \"update_item\" on type \"Mutation\". Did you mean \"create_item\", \"update_form\", \"update_view\", \"delete_item\", or \"duplicate_item\"?","locations":[{"line":2,"column":13}]}]
+Stack: #0 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\MondayAPI.php(184): MondayAPI->query('mutation ($boar...', Array)
+#1 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\webhook-handler.php(111): MondayAPI->updateItem('18392144862', '10906492682', Array)
+#2 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\test_reproduce_500.php(50): include('C:\\Users\\jesus\\...')
+#3 {main}
+2026-01-05 14:01:53 [INFO]  Recibida petición. Datos: Array
+(
+    [perfil] => zer
+    [next_step] => confirmacion
+    [monto] => 29
+    [pais_cf7] => CO
+    [ciudad_cf7] => medellin
+    [nombre] => Lead de Prueba Real
+    [fecha_nacimiento] => 1997-09-18
+    [institucion] => virtual
+    [email] => jrodriguez@virtualeduca.org
+    [pais_ui] => CO
+    [pais_otro] => 
+    [ciudad_ui] => medellin
+)
+
+2026-01-05 14:01:54 [INFO]  Actualizando duplicado: 10906492682
+2026-01-05 14:01:55 [ERROR]  ERROR CRÍTICO: Error Monday API: [{"message":"Cannot query field \"update_item\" on type \"Mutation\". Did you mean \"create_item\", \"update_form\", \"update_view\", \"delete_item\", or \"duplicate_item\"?","locations":[{"line":2,"column":13}]}]
+Stack: #0 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\MondayAPI.php(184): MondayAPI->query('mutation ($boar...', Array)
+#1 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\webhook-handler.php(111): MondayAPI->updateItem('18392144862', '10906492682', Array)
+#2 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\test_reproduce_500.php(50): include('C:\\Users\\jesus\\...')
+#3 {main}
+2026-01-05 14:09:23 [INFO]  Recibida petición. Datos: Array
+(
+    [perfil] => zer
+    [next_step] => confirmacion
+    [monto] => 29
+    [pais_cf7] => CO
+    [ciudad_cf7] => medellin
+    [nombre] => Lead de Prueba Real
+    [fecha_nacimiento] => 1997-09-18
+    [institucion] => virtual
+    [email] => jrodriguez@virtualeduca.org
+    [pais_ui] => CO
+    [pais_otro] => 
+    [ciudad_ui] => medellin
+)
+
+2026-01-05 14:09:25 [INFO]  Actualizando duplicado: 10906492682
+2026-01-05 14:09:26 [ERROR]  ERROR CRÍTICO: Error Monday API: [{"message":"Cannot query field \"update_item\" on type \"Mutation\". Did you mean \"create_item\", \"update_form\", \"update_view\", \"delete_item\", or \"duplicate_item\"?","locations":[{"line":2,"column":13}]}]
+Stack: #0 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\MondayAPI.php(184): MondayAPI->query('mutation ($boar...', Array)
+#1 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\webhook-handler.php(111): MondayAPI->updateItem('18392144862', '10906492682', Array)
+#2 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\test_reproduce_500.php(50): include('C:\\Users\\jesus\\...')
+#3 {main}
+2026-01-05 14:09:37 [INFO]  Recibida petición. Datos: Array
+(
+    [perfil] => zer
+    [next_step] => confirmacion
+    [monto] => 29
+    [pais_cf7] => CO
+    [ciudad_cf7] => medellin
+    [nombre] => Lead de Prueba Real
+    [fecha_nacimiento] => 1997-09-18
+    [institucion] => virtual
+    [email] => jrodriguez@virtualeduca.org
+    [pais_ui] => CO
+    [pais_otro] => 
+    [ciudad_ui] => medellin
+)
+
+2026-01-05 14:09:38 [INFO]  Actualizando duplicado: 10906492682
+2026-01-05 14:09:38 [ERROR]  ERROR CRÍTICO: Error Monday API: [{"message":"Cannot query field \"update_item\" on type \"Mutation\". Did you mean \"create_item\", \"update_form\", \"update_view\", \"delete_item\", or \"duplicate_item\"?","locations":[{"line":2,"column":13}]}] | Payload: {"query":"mutation ($boardId: ID!, $itemId: ID!, $columnValues: JSON!) {\r\n            update_item (board_id: $boardId, item_id: $itemId, column_values: $columnValues) {\r\n                id\r\n            }\r\n        }","variables":{"boardId":18392144862,"itemId":10906492682,"columnValues":"{\"contact_email\":{\"email\":\"jrodriguez@virtualeduca.org\",\"text\":\"jrodriguez@virtualeduca.org\"},\"contact_phone\":{\"phone\":\"\",\"countryShortName\":\"ES\"},\"texto\":\"\",\"status\":{\"label\":\"Lead\"},\"numeric_mkz3ds8m\":3,\"color_mkz3yyj8\":{\"label\":\"COLD\"},\"color_mkz3176k\":{\"label\":\"Joven\"},\"text_mkz3vvqv\":\"CO\",\"text_mkz3w9bk\":\"medellin\",\"date_mkz3bbqb\":{\"date\":\"2026-01-05\"},\"date_mkz3devn\":{\"date\":\"2026-01-05\"},\"color_mkz3pvz9\":{\"label\":\"En curso\"},\"long_text_mkz360cv\":{\"text\":\"{\\\"perfil\\\":3,\\\"tipo_institucion\\\":0}\"}}"}}
+Stack: #0 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\MondayAPI.php(186): MondayAPI->query('mutation ($boar...', Array)
+#1 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\webhook-handler.php(111): MondayAPI->updateItem('18392144862', '10906492682', Array)
+#2 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\test_reproduce_500.php(50): include('C:\\Users\\jesus\\...')
+#3 {main}
+2026-01-05 14:14:21 [INFO]  Recibida petición. Datos: Array
+(
+    [perfil] => zer
+    [next_step] => confirmacion
+    [monto] => 29
+    [pais_cf7] => CO
+    [ciudad_cf7] => medellin
+    [nombre] => Lead de Prueba Real
+    [fecha_nacimiento] => 1997-09-18
+    [institucion] => virtual
+    [email] => jrodriguez@virtualeduca.org
+    [pais_ui] => CO
+    [pais_otro] => 
+    [ciudad_ui] => medellin
+)
+
+2026-01-05 14:14:23 [INFO]  Actualizando duplicado: 10906492682
+2026-01-05 14:14:23 [ERROR]  ERROR CRÍTICO: Error Monday API: [{"message":"Cannot query field \"update_item\" on type \"Mutation\". Did you mean \"create_item\", \"update_form\", \"update_view\", \"delete_item\", or \"duplicate_item\"?","locations":[{"line":2,"column":13}]}] | Payload: {"query":"mutation ($boardId: ID!, $itemId: ID!, $columnValues: JSON!) {\r\n            update_item (board_id: $boardId, item_id: $itemId, column_values: $columnValues) {\r\n                id\r\n            }\r\n        }","variables":{"boardId":18392144862,"itemId":10906492682,"columnValues":"{\"contact_email\":{\"email\":\"jrodriguez@virtualeduca.org\",\"text\":\"jrodriguez@virtualeduca.org\"},\"contact_phone\":{\"phone\":\"\",\"countryShortName\":\"ES\"},\"texto\":\"\",\"status\":{\"label\":\"Lead\"},\"numeric_mkz3ds8m\":3,\"color_mkz3yyj8\":{\"label\":\"COLD\"},\"color_mkz3176k\":{\"label\":\"Joven\"},\"text_mkz3vvqv\":\"CO\",\"text_mkz3w9bk\":\"medellin\",\"date_mkz3bbqb\":{\"date\":\"2026-01-05\"},\"date_mkz3devn\":{\"date\":\"2026-01-05\"},\"color_mkz3pvz9\":{\"label\":\"En curso\"},\"long_text_mkz360cv\":{\"text\":\"{\\\"perfil\\\":3,\\\"tipo_institucion\\\":0}\"}}"}}
+Stack: #0 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\MondayAPI.php(186): MondayAPI->query('mutation ($boar...', Array)
+#1 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\webhook-handler.php(111): MondayAPI->updateItem('18392144862', '10906492682', Array)
+#2 C:\Users\jesus\AI-Vault\projects\monday-automation\src\wordpress\test_reproduce_500.php(50): include('C:\\Users\\jesus\\...')
+#3 {main}
