@@ -2,7 +2,7 @@
 /**
  * Plugin Name: CF7 Forms Extractor
  * Description: Extrae la estructura de todos los formularios Contact Form 7 para análisis
- * Version: 1.0.1
+ * Version: 1.1.2
  * Author: AI Assistant
  */
 
